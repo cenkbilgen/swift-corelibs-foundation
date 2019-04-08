@@ -88,6 +88,9 @@ CF_PRIVATE os_log_t _CFOSLog(void) {
     return logger;
 }
 
+
+
+
 /* Comparator is passed the address of the values. */
 /* Binary searches a sorted-increasing array of some type.
    Return value is either 1) the index of the element desired,
@@ -1148,7 +1151,12 @@ size_t _CFSuddenTerminationDisablingCount(void) {
 
 #pragma mark File Reading
     
+#if TARGET_OS_LINUX
+#include <linux/stat.h>
+#else
 #include <sys/stat.h>
+#endif
+
 #include <fcntl.h>
 #include <errno.h>
 #if DEPLOYMENT_TARGET_WINDOWS

@@ -28,7 +28,12 @@ CFData read/write routines
 #include <stdlib.h>
 #include <unistd.h>
 #include <dirent.h>
+//#include <sys/stat.h>
+#if TARGET_OS_LINUX
+#include <linux/stat.h>
+#else
 #include <sys/stat.h>
+#endif
 #include <sys/types.h>
 #include <pwd.h>
 #include <fcntl.h>

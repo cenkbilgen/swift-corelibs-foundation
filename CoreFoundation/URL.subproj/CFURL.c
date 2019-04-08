@@ -25,7 +25,12 @@
 #include <CoreFoundation/CFNumberFormatter.h>
 #endif
 #include <unistd.h>
+//#include <sys/stat.h>
+#if TARGET_OS_LINUX
+#include <linux/stat.h>
+#else
 #include <sys/stat.h>
+#endif
 #include <sys/types.h>
 #if __has_include(<sys/syslog.h>)
 #include <sys/syslog.h>

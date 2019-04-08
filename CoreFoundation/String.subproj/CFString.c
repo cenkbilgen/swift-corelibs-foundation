@@ -55,7 +55,14 @@
 #endif
 
 #if INSTRUMENT_SHARED_STRINGS
-#include <sys/stat.h> /* for umask() */
+
+//#include <sys/stat.h> /* for umask() */
+#if TARGET_OS_LINUX
+#include <linux/stat.h>
+#else
+#include <sys/stat.h>
+#endif
+
 #include <unistd.h> /* for confstr */
 #include <crt_externs.h>
 

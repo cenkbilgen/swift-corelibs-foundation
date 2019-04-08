@@ -17,7 +17,12 @@
 #include <fcntl.h>
 #include <string.h>
 #include <stdio.h>
+//#include <sys/stat.h>
+#if TARGET_OS_LINUX
+#include <linux/stat.h>
+#else
 #include <sys/stat.h>
+#endif
 #if DEPLOYMENT_TARGET_MACOSX || DEPLOYMENT_TARGET_EMBEDDED || DEPLOYMENT_TARGET_EMBEDDED_MINI || DEPLOYMENT_TARGET_LINUX
 #include <sys/time.h>
 #include <unistd.h>

@@ -35,7 +35,12 @@
 #include <dlfcn.h>
 #endif /* BINARY_SUPPORT_DLFCN */
 
+//#include <sys/stat.h>
+#if TARGET_OS_LINUX
+#include <linux/stat.h>
+#else
 #include <sys/stat.h>
+#endif
 #include <ctype.h>
 
 #if DEPLOYMENT_TARGET_WINDOWS

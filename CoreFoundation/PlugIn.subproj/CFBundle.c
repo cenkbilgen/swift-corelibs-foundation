@@ -21,7 +21,12 @@
 #include <CoreFoundation/CFByteOrder.h>
 #include "CFBundle_BinaryTypes.h"
 #include <ctype.h>
+//#include <sys/stat.h>
+#if TARGET_OS_LINUX
+#include <linux/stat.h>
+#else
 #include <sys/stat.h>
+#endif
 #include <stdlib.h>
 
 

@@ -17,7 +17,13 @@
 #include "CFRuntime_Internal.h"
 #include <math.h>
 #include <limits.h>
+
+#if TARGET_OS_LINUX
+#include <linux/stat.h>
+#else
 #include <sys/stat.h>
+#endif
+
 #include <fcntl.h>
 #include <stdlib.h>
 #include <string.h>
